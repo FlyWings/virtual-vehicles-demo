@@ -11,9 +11,6 @@ LABEL io.k8s.description="Platform for building and running JEE applications on 
       io.openshift.tags="builder,wildfly,wildfly81" \
       io.openshift.s2i.destination="/opt/s2i/destination"
     
-ADD Authentication    /root/apps/
-ADD Authentication/startAuth.sh /usr/local/bin/startAuth.sh
-
-USER 1001
-
-ENTRYPOINT ["/usr/local/bin/startAuth"]
+ADD Authentication  /apps/
+WORKDIR /apps
+ENTRYPOINT ["./startAuth.sh"]
