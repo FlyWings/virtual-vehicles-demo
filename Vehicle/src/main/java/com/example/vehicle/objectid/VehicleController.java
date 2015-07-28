@@ -110,7 +110,7 @@ public class VehicleController {
         QueryFilter filter = QueryFilters.parseFrom(request);
         QueryOrder order = QueryOrders.parseFrom(request);
         QueryRange range = QueryRanges.parseFrom(request, 20);
-        boolean countOnly = Boolean.parseBoolean(request.getQueryStringMap().getOrDefault("countOnly", "false"));
+        boolean countOnly = Boolean.parseBoolean((request.getQueryStringMap().get("countOnly") == null)?"false":request.getQueryStringMap().get("countOnly"));
         List<Vehicle> entities = service.readAll(filter, range, order);
         long count = service.count(filter);
         response.setCollectionResponse(range, entities.size(), count);

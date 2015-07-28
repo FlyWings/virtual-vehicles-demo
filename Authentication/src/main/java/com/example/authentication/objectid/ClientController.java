@@ -105,7 +105,7 @@ public class ClientController {
         QueryOrder order = QueryOrders.parseFrom(request);
         QueryRange range = QueryRanges.parseFrom(request, 20);
         boolean countOnly = Boolean.parseBoolean(
-                request.getQueryStringMap().getOrDefault("countOnly", "false"));
+                (request.getQueryStringMap().get("countOnly") == null)?"false":request.getQueryStringMap().get("countOnly"));
         List<Client> entities = service.readAll(filter, range, order);
         long count = service.count(filter);
 

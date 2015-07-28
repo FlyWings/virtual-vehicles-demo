@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="ERROR">
     <Properties>
-        <Property name="log-path">${env:HOME}</Property>
+        <!-- <Property name="log-path">${env:HOME}</Property>  -->
+        <Property name="log-path">C:\Users\chengchang.wang</Property>
     </Properties>
     <Appenders>
         <RollingFile name="RollingFile" fileName="${log-path}/virtual-authentication.log"
