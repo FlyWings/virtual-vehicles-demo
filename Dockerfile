@@ -10,16 +10,6 @@ LABEL io.k8s.description="Platform for building and running JEE applications on 
       io.openshift.expose-services="8080:http" \
       io.openshift.tags="builder,wildfly,wildfly81" \
       io.openshift.s2i.destination="/opt/s2i/destination"
-      
-RUN yum install -y --enablerepo=centosplus \
-    tar unzip bc which lsof java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
-    yum clean all -y && \
-    (curl -0 http://mirror.sdunix.com/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz | \
-    tar -zx -C /usr/local) && \
-    ln -sf /usr/local/apache-maven-3.0.5/bin/mvn /usr/local/bin/mvn && \
-    mkdir -p /wildfly && \
-    mkdir -p /opt/app-root/source && \
-    mkdir -p /opt/s2i/destination
     
 ADD Authentication    /root/apps/
 ADD Authentication/startAuth.sh /usr/local/bin/startAuth.sh
