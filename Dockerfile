@@ -18,7 +18,6 @@ RUN yum install -y --enablerepo=centosplus \
     tar -zx -C /usr/local) && \
     ln -sf /usr/local/apache-maven-3.0.5/bin/mvn /usr/local/bin/mvn && \
     mkdir -p /wildfly && \
-    (curl -0 http://download.jboss.org/wildfly/8.1.0.Final/wildfly-8.1.0.Final.tar.gz | tar -zx --strip-components=1 -C /wildfly) && \
     mkdir -p /opt/app-root/source && \
     mkdir -p /opt/s2i/destination
     
