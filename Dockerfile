@@ -21,11 +21,8 @@ RUN yum install -y --enablerepo=centosplus \
     mkdir -p /opt/app-root/source && \
     mkdir -p /opt/s2i/destination
     
-ADD ./Authentication/src/    /root/apps/src/
-ADD ./Authentication/config/ /root/apps/config/
-ADD ./Authentication/pom.xml /root/apps/pom.xml
-ADD ./Authentication/zip-with-dependencies.xml /root/apps/zip-with-dependencies.xml
-ADD ./Authentication/startAuth.sh /usr/local/bin/startAuth.sh
+ADD Authentication    /root/apps/
+ADD Authentication/startAuth.sh /usr/local/bin/startAuth.sh
 
 USER 1001
 
