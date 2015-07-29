@@ -1,4 +1,4 @@
-FROM virtual-vehicle/micro-service-base:v1.0
+FROM 172.30.203.255:5000/virtual-vehicle/micro-service-base:v1.0
 MAINTAINER Chengchang Wang <chengchang.wang@vipshop.com>
 
 EXPOSE 8587
