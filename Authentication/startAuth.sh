@@ -3,4 +3,5 @@ echo "mongodb.uri = mongodb://$MONGODB_SERVICE_HOST:$MONGODB_SERVICE_PORT/virtua
 
 ## start mvn build and the application
 cd /apps
-mvn clean package exec:java
+mvn clean package
+java -jar target/Authentication-1.0-SNAPSHOT.jar
