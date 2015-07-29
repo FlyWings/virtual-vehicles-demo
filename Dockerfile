@@ -15,6 +15,6 @@ ADD Authentication  /apps/
 #ADD Vehicle /apps/
 #ADD Maintenance /apps/
 #ADD Valet /apps/
-
+RUN chmod 755 /apps/startAuth.sh
 WORKDIR /apps
 ENTRYPOINT ["./startAuth.sh"]
