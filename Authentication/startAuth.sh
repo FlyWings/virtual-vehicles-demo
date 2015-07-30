@@ -1,5 +1,5 @@
 ## get the mongodb service host and port information using envrionement 
-echo "mongodb.uri = mongodb://$MONGODB_SERVICE_HOST:$MONGODB_SERVICE_PORT/virtual_authentication" >> /apps/config/dev/environment.properties
+echo "mongodb.uri = mongodb://admin:passw0rd@$MONGODB_SERVICE_HOST:$MONGODB_SERVICE_PORT/virtual_authentication" >> /apps/config/dev/environment.properties
 
 ## start mvn build and the application
 cd /apps
