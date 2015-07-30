@@ -16,5 +16,6 @@ ADD Authentication  /apps/
 #ADD Maintenance /apps/
 #ADD Valet /apps/
 RUN chmod 755 /apps/startAuth.sh
+USER root
 WORKDIR /apps
 ENTRYPOINT ["/bin/bash", "./startAuth.sh"]
