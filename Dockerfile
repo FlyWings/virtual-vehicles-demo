@@ -15,11 +15,9 @@ ADD Authentication  /apps/
 #ADD Vehicle /apps/
 #ADD Maintenance /apps/
 #ADD Valet /apps/
-
-WORKDIR /apps
 RUN chmod 755 /apps/startAuth.sh && \
     chmod -R 755 /apps && \
 	echo "mongodb.uri = mongodb://$MONGODB_SERVICE_HOST:$MONGODB_SERVICE_PORT/virtual_authentication" >> /apps/config/dev/environment.properties
-
-
+	
+WORKDIR /apps
 ENTRYPOINT ["/bin/bash", "./startAuth.sh"]
